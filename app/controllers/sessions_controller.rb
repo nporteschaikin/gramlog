@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 	
 	def new
-		puts sessions_create_url
 		redirect_to Instagram.authorize_url(:redirect_uri => sessions_create_url)
 	end
 	

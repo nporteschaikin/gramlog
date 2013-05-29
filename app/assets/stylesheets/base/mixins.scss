@@ -15,3 +15,15 @@
 		box-shadow: $a;
 	}
 }
+
+@mixin text-shadow ($a, $b: "") {
+	@if $b != "" {
+		-webkit-text-shadow: $a, $b;
+		-moz-text-shadow: $a, $b;
+		text-shadow: $a, $b;
+	} @else {
+		-webkit-text-shadow: $a;
+		-moz-text-shadow: $a;
+		text-shadow: $a;
+	}
+}

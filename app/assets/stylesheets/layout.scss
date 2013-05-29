@@ -104,17 +104,13 @@ nav {
 		@extend %inline-block;
 		position: relative;
 	}
-	&.red {
-		li {
-			background: #E74C3C;
-			color: #ECF0F1;
-		}
+	.red {
+		background: #E74C3C;
+		color: #ECF0F1;
 	}
-	&.white {
-		li {
-			background: #fff;
-			color: #444;			
-		}
+	.white {
+		background: #fff;
+		color: #444;	
 	}
 	span, a, input {
 		@include box-sizing(border-box);
@@ -122,6 +118,10 @@ nav {
 		margin: 0;
 		border: 0;
 		display: block;
+		background: transparent;
+	}
+	input {
+		width: 300px;
 	}
 	ul {
 		> li:first-child {
@@ -134,3 +134,5 @@ nav {
 		}
 	}
 }
+
+

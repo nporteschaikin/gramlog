@@ -32,11 +32,12 @@ a:hover {
 
 nav {
 	font-size: 0;
-	line-height: 0;
 	li, input {
 		font-size: 25px;
+		height: 49px;
+		line-height: 1;
 		letter-spacing: -0.03em;
 		font-weight: 600;
-		vertical-align: baseline;
+		vertical-align: top;
 	}
 }

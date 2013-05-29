@@ -13,6 +13,7 @@ body {
 }
 
 .photos {
+	position: relative;
 	article {
 		@extend %inline-block;
 		vertical-align: top;

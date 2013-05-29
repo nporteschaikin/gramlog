@@ -107,6 +107,12 @@ nav {
 	.red {
 		background: #E74C3C;
 		color: #ECF0F1;
+		&.disabled {
+			color: rgba(255, 255, 255, 0.75);
+		}
+		&.enabled {
+			background: #C0392B;
+		}
 	}
 	.white {
 		background: #fff;

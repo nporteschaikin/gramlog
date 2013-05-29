@@ -112,7 +112,7 @@ nav {
 		background: #fff;
 		color: #444;	
 	}
-	span, a, input {
+	span, a, input, button {
 		@include box-sizing(border-box);
 		padding: 12px 18px;
 		margin: 0;

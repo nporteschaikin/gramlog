@@ -8,7 +8,7 @@ var sticky = {
 			sticky.elements[x].data('pos', sticky.elements[x].offset().top)
 		}
 		sticky.scroll();
-		$(window).on('scroll', sticky.scroll);
+		$(window).on('scroll resize', sticky.scroll);
 	},
 	scroll: function () {
 		var body = $('body').scrollTop();

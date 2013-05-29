@@ -24,6 +24,12 @@
 	}
 }
 
+%no-transition {
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
 %clearfix {
 	zoom: 1;
 	&:before { content: ''; display: block; }

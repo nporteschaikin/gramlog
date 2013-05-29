@@ -13,6 +13,9 @@ body {
 }
 
 .photos {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	@extend %no-transition;
 	position: relative;
 	article {
 		@extend %inline-block;
@@ -42,6 +45,22 @@ body {
 	img {
 		width: 100%;
 		display: block;
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+		-webkit-transition: all 0.5s 0.5s ease-in-out;
+		-moz-transition: all 0.5s 0.5s ease-in-out;
+		-o-transition: all 0.5s 0.5s ease-in-out;
+		transition: all 0.5s 0.5s ease-in-out;
+		&.loaded {
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+		}
 	}
 	address {
 		opacity: 0;

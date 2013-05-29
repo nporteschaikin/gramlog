@@ -32,7 +32,7 @@ body {
 			border: 1px solid transparent;
 			&:hover {
 				@include box-shadow(0 0 24px rgba(0, 0, 0, 0.5));
-				border: 1px solid #E74C3C;
+				border: 1px solid #F1C40F;
 			}
 		}
 		&:hover {
@@ -94,7 +94,18 @@ nav {
 	}
 	li {
 		@extend %inline-block;
-		background: #ECF0F1;
+		background: #E74C3C;
+		color: #ECF0F1;
 		padding: 12px 18px;
+	}
+	ul {
+		> li:first-child {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		> li:last-child {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
 	}
 }

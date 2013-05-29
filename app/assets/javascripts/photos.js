@@ -10,11 +10,8 @@ var photos = {
 		photos.elements.images.imagesLoaded(
 			function () {
 				var th = $(this);
-				$(this).parents('.photos').animate({opacity: 1}, {duration: 125, queue: false,
-					complete: function () {
-						th.addClass('loaded');
-					}
-				})
+				$(this).parents('.photos').animate({opacity: 1}, {duration: 125, queue: false});
+				$(this).addClass('loaded');
 			}
 		)
 	}

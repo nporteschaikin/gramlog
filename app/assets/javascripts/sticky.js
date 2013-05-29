@@ -1,6 +1,6 @@
 var sticky = {
 	elements: {
-		parent: 'nav'
+		parent: '.sticky'
 	},
 	init: function () {
 		for (x in sticky.elements) {

@@ -1,8 +1,9 @@
 %section.photos
-	%nav.left
+	%nav.sticky.red.left
 		%ul
 			%li
-				= title
+				%span
+					= title
 	- feed.each do |gram|
 		%article
 			= link_to "Instagram", "#"

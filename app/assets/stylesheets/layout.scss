@@ -92,11 +92,28 @@ nav {
 	&.right {
 		right: 12px;
 	}
+	&.fixed {
+		position: fixed;
+	}
 	li {
 		@extend %inline-block;
-		background: #E74C3C;
-		color: #ECF0F1;
+		position: relative;
+	}
+	&.red {
+		li {
+			background: #E74C3C;
+			color: #ECF0F1;
+		}
+	}
+	&.white {
+		li {
+			background: #fff;
+			color: #444;			
+		}
+	}
+	span, a, input {
 		padding: 12px 18px;
+		display: block;
 	}
 	ul {
 		> li:first-child {

@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130529045610) do
+ActiveRecord::Schema.define(version: 20130529164825) do
+
+  create_table "blogs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
+
+  create_table "grams", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "gid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "grams", ["post_id"], name: "index_grams_on_post_id"
+
+  create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["post_id"], name: "index_likes_on_post_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "posts", force: true do |t|
+    t.integer  "blog_id"
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["blog_id"], name: "index_posts_on_blog_id"
+
+  create_table "relationships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "related_id"
+    t.string   "related_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["related_id", "related_type"], name: "index_relationships_on_related_id_and_related_type"
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "users", force: true do |t|
     t.integer  "uid"

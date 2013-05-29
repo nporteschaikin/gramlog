@@ -6,8 +6,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.string :name
       t.string :website
-      t.integer :following
-      t.integer :followers
       t.string :picture
       t.string :bio
 

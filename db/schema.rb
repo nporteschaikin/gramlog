@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20130529045610) do
     t.string   "username"
     t.string   "name"
     t.string   "website"
-    t.integer  "following"
-    t.integer  "followers"
     t.string   "picture"
     t.string   "bio"
     t.datetime "created_at"

@@ -1,5 +1,1 @@
-%section.photos
-	- @feed.each do |gram|
-		%article
-			= link_to "Instagram", "#"
-			= image_instagram(gram)
+= render 'shared/feed', feed: @feed

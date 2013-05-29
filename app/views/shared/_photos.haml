@@ -1,0 +1,11 @@
+%section.photos
+	%nav.left
+		%ul
+			%li
+				= title
+	- feed.each do |gram|
+		%article
+			= link_to "Instagram", "#"
+			%address
+				= instagram_user_link(gram)
+			= instagram_image(gram)

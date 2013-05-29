@@ -62,3 +62,26 @@ body {
 		}
 	}
 }
+
+nav {
+	position: absolute;
+	position: sticky;
+	z-index: 20;
+	top: 12px;
+	&.left {
+		left: 12px;
+	}
+	&.right {
+		right: 12px;
+	}
+	ul {
+		* {
+			border-radius: 3px;
+		}
+	}
+	li {
+		@extend %inline-block;
+		background: #fff;
+		padding: 6px 12px;
+	}
+}

@@ -12,8 +12,15 @@ body {
 	background: #BDC3C7;
 }
 
-input {
-	outline: none;
+*, *:active, *:focus {
+	outline: 0;
+	outline-style: none;
+	outline-width: 0;
+	-moz-outline-width: 0;
+}
+
+input, textarea {
+	-webkit-transform: translate3d(0,0,0);
 }
 
 .red {
@@ -339,11 +346,17 @@ nav {
 	left: 50%;
 	width: 500px;
 	margin-left: -250px;
+	#blog_slug {
+		padding-left: 170px;
+	}
+	span {
+		// padding: 14px 0 0 18px;
+	}
 }
 
 form {
 	@extend %no-transition;
-	label {
+	label, span {
 		position: absolute;
 		@extend %no-transition;
 		cursor: text;
@@ -363,14 +376,17 @@ form {
 	> section section {
 		border-bottom: 1px solid #ddd;
 	}
-	input, label {
-		@include box-sizing(border-box);
-		width: 100%;		
+	input, label, span {
+		@include box-sizing(border-box);		
 		display: block;
 		border: 0;
 		margin: 0;
 		padding: 12px 18px;
+		height: 49px;
 		background: transparent;
+	}
+	input, label {
+		width: 100%;
 	}
 }
 

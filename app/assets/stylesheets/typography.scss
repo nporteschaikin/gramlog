@@ -54,12 +54,8 @@ h2 {
 }
 
 form {
-	input, label {
+	input, label, span {
 		font-size: 20px;
-		line-height: 1;
-	}
-	span {
-		font-size: 12px;
-		line-height: 1;
+		line-height: 20px;
 	}
 }

@@ -88,13 +88,13 @@ input {
 
 nav {
 	overflow: hidden;
-	&.sticky {
+	&.sticky, &.absolute {
 		position: absolute;
 	}
 	&.fixed {
 		position: fixed;
 	}
-	&.sticky, &.fixed {
+	&.sticky, &.fixed, &.absolute {
 		z-index: 20;
 		top: 12px;
 	}
@@ -157,6 +157,11 @@ nav {
 			border-color: #2C3E50;
 		}
 	}
+	.yellow {
+		background: #F1C40F;
+		color: #fff;
+		border-bottom-color: #F1C40F;
+	}
 	.dark-blue {
 		background: #34495E;
 		border-color: #2C3E50;
@@ -177,7 +182,11 @@ nav {
 			color: inherit;
 		}
 	}
-	span, a, input, button, ul ul, label {
+	span {
+		display: inline-block;
+		vertical-align: top;
+	}
+	> ul > li > span, > ul > li > a, input, button, ul ul, label {
 		@include box-sizing(border-box);
 		padding: 12px 18px;
 		margin: 0;
@@ -214,7 +223,7 @@ nav {
 			border-bottom-right-radius: 3px;
 		}
 	}
-	ul ul li {
+	ul ul li, .icon {
 		width: 25px;
 		height: 25px;
 		white-space: no-wrap;
@@ -226,8 +235,10 @@ nav {
 		}
 	}
 	.plus {
-		background-color: transparent;
 		background-image: image-url('icons/plus-white-25.png');
+	}
+	.camera {
+		background-image: image-url('icons/camera-white-25.png');
 	}
 }
 
@@ -292,6 +303,37 @@ input {
 		display: table-cell;
 		vertical-align: middle;
 		width: 100%;
+	}
+}
+
+.mine {
+	.container {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 24px;
+		z-index: 2;
+	}
+	.open {
+		cursor: pointer;
+		z-index: 1;
+	}
+}
+
+.empty {
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	hgroup {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		padding: 24px 0;
+		@include box-sizing(border-box);
+		text-align: ceneter;
 	}
 }
 

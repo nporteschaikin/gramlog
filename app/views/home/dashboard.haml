@@ -1,12 +1,15 @@
-%nav.left.fixed
-	%ul
-		%li.turquoise
-			= link_to "Blogs", blogs_path
-%nav.right.fixed
-	%ul
-		%li.blue
+%section.mine
+	- if @blogs.empty?
+		%nav.fixed.left
 			%ul
-				%li.plus
-					= link_to "New", new_blog_path
-%main
-	= # render 'shared/blogs', blogs: @feed
+				%li.blue
+					= link_to new_blog_path, remote: true do
+						%span.icon.camera
+						%span Create blog
+	- else
+		%nav.absolute.right.open
+			%ul
+				%li.green
+					%span My blogs
+	.container
+		= render 'shared/blogs', blogs: @blogs

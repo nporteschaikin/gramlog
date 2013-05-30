@@ -1,9 +1,11 @@
-%section.blogs{"class" => cls}
-	- if title
+%section.blogs{"class" => defined?(cls) ? cls : nil}
+	- if defined?(title)
 		%nav.sticky.left
 			%ul
 				%li.red
 					%span
 						= title
-	- blogs.each do |blog|
-		%article
+
+		- blogs.each do |blog|
+			%article
+		

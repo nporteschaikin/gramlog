@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130529164825) do
+ActiveRecord::Schema.define(version: 20130530021450) do
 
   create_table "blogs", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20130529164825) do
   end
 
   add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
+
+  create_table "geocodes", force: true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "grams", force: true do |t|
     t.integer  "post_id"
@@ -70,6 +78,8 @@ ActiveRecord::Schema.define(version: 20130529164825) do
     t.string   "username"
     t.string   "name"
     t.string   "website"
+    t.integer  "following"
+    t.integer  "followers"
     t.string   "picture"
     t.string   "bio"
     t.datetime "created_at"

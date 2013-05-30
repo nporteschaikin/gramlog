@@ -1,6 +1,18 @@
-%nav.white.right.fixed
+%nav.search.right.fixed
 	%ul
-		%li.red
-			%span @
 		%li.white
-			= text_field :search, :q
+			%ul
+				%li.person.open
+				%li.tag
+				%li.place
+		%li.white
+			%section.carousel
+				= form_tag search_person_path, method: :post, remote: true do
+					%label Search people...
+					= text_field :search, :q
+				= form_tag search_tag_path, method: :post, remote: true do
+					%label Search tags...
+					= text_field :search, :q
+				= form_tag search_place_path, method: :post, remote: true do
+					%label Search places...
+					= text_field :search, :q

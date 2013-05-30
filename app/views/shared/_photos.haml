@@ -1,9 +1,10 @@
 %section.photos{"class" => cls}
-	%nav.sticky.left
-		%ul
-			%li.red
-				%span
-					= title
+	- if title
+		%nav.sticky.left
+			%ul
+				%li.red
+					%span
+						= title
 	- feed.each do |gram|
 		%article
 			= link_to "Instagram", "#"

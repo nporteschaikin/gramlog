@@ -8,11 +8,10 @@ var sticky = {
 			sticky.elements[x].data('pos', sticky.elements[x].offset().top)
 		}
 		sticky.scroll();
-		$(window).on('scroll resize', sticky.scroll);
+		$(window).off('scroll resize').on('scroll resize', sticky.scroll);
 	},
 	scroll: function () {
 		var body = $('body').scrollTop();
-		console.log(body);
 		sticky.elements.parent.each(
 			function () {
 				var parent = { height: $(this).parent().height(), offset: $(this).parent().offset().top };
@@ -22,4 +21,4 @@ var sticky = {
 	}
 }
 
-$(document).on('ready', sticky.init)
+$(document).on('go', sticky.init)

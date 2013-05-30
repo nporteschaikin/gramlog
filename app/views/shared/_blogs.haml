@@ -1,0 +1,9 @@
+%section.blogs{"class" => cls}
+	- if title
+		%nav.sticky.left
+			%ul
+				%li.red
+					%span
+						= title
+	- blogs.each do |blog|
+		%article

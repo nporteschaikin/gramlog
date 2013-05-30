@@ -1,0 +1,12 @@
+%nav.left.fixed
+	%ul
+		%li.turquoise
+			= link_to "Blogs", blogs_path
+%nav.right.fixed
+	%ul
+		%li.blue
+			%ul
+				%li.plus
+					= link_to "New", new_blog_path
+%main
+	= # render 'shared/blogs', blogs: @feed

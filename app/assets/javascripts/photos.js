@@ -1,20 +1,28 @@
 var photos = {
 	elements: {
+		parent: '.photos',
 		images: '.photos img'
 	},
 	init: function () {
-		photos.elements.images = $(photos.elements.images);
 		photos.load();
 	},
 	load: function () {
-		photos.elements.images.imagesLoaded(
+		photos.loading(true);
+		$(photos.elements.images).imagesLoaded(
 			function () {
 				var th = $(this);
-				$(this).parents('.photos').animate({opacity: 1}, {duration: 125, queue: false});
+				photos.loading(false);
 				$(this).addClass('loaded');
 			}
 		)
+	},
+	loading: function (bool) {
+		if (bool) {
+			$(photos.elements.parent).stop().animate({opacity: 0}, {duration: 250, queue: false});
+		} else {
+			$(photos.elements.parent).stop().animate({opacity: 1}, {duration: 250, queue: false});
+		}
 	}
 }
 
-$(document).on('ready', photos.init)
+$(document).on('go', photos.init)

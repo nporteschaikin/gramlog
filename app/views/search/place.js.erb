@@ -1,0 +1,2 @@
+$('main').html('<%= escape_javascript(render "shared/photos", feed: @media, title: @place.address, cls: 'place') %>');
+$(document).trigger('go');

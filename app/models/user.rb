@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 	
+	has_many :blogs
+	has_many :posts, through: :blogs
+	
 	def self.authenticated(client)
 		instagram = client.user()
 		user = self.find_or_create_by(uid: instagram[:id])

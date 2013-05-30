@@ -35,9 +35,15 @@ nav {
 	li, input {
 		font-size: 25px;
 		height: 49px;
-		line-height: 1;
+		line-height: 25px;
 		letter-spacing: -0.03em;
 		font-weight: 600;
 		vertical-align: top;
 	}
+}
+
+h1 {
+	font-size: 40px;
+	@include text-shadow(0 0 6px rgba(0, 0, 0, 1));
+	margin-bottom: 24px;
 }

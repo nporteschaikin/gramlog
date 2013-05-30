@@ -1,4 +1,4 @@
-= form_for object do |f|
+= form_for object, remote: true do |f|
 	%section.white
 		%section
 			= f.label :name, "What would you like to call your new blog?"
@@ -6,3 +6,5 @@
 		%section
 			%span gramlog.com/b/
 			= f.text_field :slug
+	= button_tag "Save", class: "green"
+		

@@ -1,11 +1,11 @@
 @import 'base/*';
 
-html, body, input {
-	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+html, body, input, button {
+	font: 11px/11px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
-	font-size: 11px;
 }
+
 
 a {
 	color: #333;
@@ -32,13 +32,12 @@ a:hover {
 
 nav {
 	font-size: 0;
-	li, input {
+	li, form input {
 		font-size: 25px;
-		height: 49px;
 		line-height: 25px;
 		letter-spacing: -0.03em;
-		font-weight: 600;
 		vertical-align: top;
+		font-weight: 600;
 	}
 }
 
@@ -57,5 +56,13 @@ form {
 	input, label, span {
 		font-size: 20px;
 		line-height: 20px;
+		font-weight: 60;
+		font-weight: 600;
 	}
+}
+
+button {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 20px;
 }

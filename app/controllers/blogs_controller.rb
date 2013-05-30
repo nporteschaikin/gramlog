@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
 	end
 	
 	def create
-		@blog = Blog.create(params[:blog])
+		@blog = Blog.create(blog_params)
 		respond_to do |f|
 			f.js { render layout: false }
 		end
@@ -37,4 +37,10 @@ class BlogsController < ApplicationController
 		@blog.destroy
 	end
 	
+	private
+	
+		def blog_params
+			params.require(:blog).permit(:name, :slug)
+		end
+		
 end

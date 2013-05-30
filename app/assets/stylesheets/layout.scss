@@ -19,10 +19,6 @@ body {
 	-moz-outline-width: 0;
 }
 
-input, textarea {
-	-webkit-transform: translate3d(0,0,0);
-}
-
 .red {
 	background: #E74C3C;
 	color: #ECF0F1;
@@ -346,11 +342,9 @@ nav {
 	left: 50%;
 	width: 500px;
 	margin-left: -250px;
+	display: none;
 	#blog_slug {
-		padding-left: 170px;
-	}
-	span {
-		// padding: 14px 0 0 18px;
+		padding-left: 175px;
 	}
 }
 
@@ -377,16 +371,26 @@ form {
 		border-bottom: 1px solid #ddd;
 	}
 	input, label, span {
+		-webkit-appearance: none;
 		@include box-sizing(border-box);		
 		display: block;
 		border: 0;
 		margin: 0;
 		padding: 12px 18px;
-		height: 49px;
 		background: transparent;
+		text-shadow: none;
+		height: 44px;
 	}
 	input, label {
 		width: 100%;
+	}
+	button {
+		padding: 10px 12px;
+		border: 0;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+		border-radius: 3px;
+		cursor: pointer;
 	}
 }
 

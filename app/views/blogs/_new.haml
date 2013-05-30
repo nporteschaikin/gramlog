@@ -1,0 +1,8 @@
+= form_for object do |f|
+	%section.white
+		%section
+			= f.label :name, "What would you like to call your new blog?"
+			= f.text_field :name
+		%section
+			= f.label :slug, "URL"
+			= f.text_field :slug

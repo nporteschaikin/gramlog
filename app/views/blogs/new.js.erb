@@ -1,0 +1,4 @@
+$('#new_blog').remove();
+$('body').prepend('<%= escape_javascript(render 'new', object: @blog) %>');
+$('#new_blog').fadeIn(250);
+$(document).trigger('go');

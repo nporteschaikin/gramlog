@@ -1,5 +1,5 @@
 var input = {
-	parent: 'input[type=text], textarea',
+	parent: 'input[type=text]',
 	init: function () {
 		$(input.parent).off('click').on('click', function () { input.focus($(this)) } );
 		$(input.parent).off('blur').on('blur', function () { input.blur($(this)) } );

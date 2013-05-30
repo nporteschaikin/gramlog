@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
 	def new
 		@blog = Blog.new(params[:blog])
 		respond_to do |f|
-			f.js { render 'blog/new', layout: false }
+			f.js { render layout: false }
 			f.html
 		end
 	end
@@ -19,8 +19,7 @@ class BlogsController < ApplicationController
 	def create
 		@blog = Blog.create(params[:blog])
 		respond_to do |f|
-			f.js { render 'blog/new', layout: false }
-			f.html
+			f.js { render layout: false }
 		end
 	end
 	

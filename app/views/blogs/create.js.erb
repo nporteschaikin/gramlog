@@ -1,5 +1,10 @@
+<% unless @blog.errors.any? %>
+$('.mine').replaceWith('<%= escape_javascript(render 'home/blogs', blogs: current_user.blogs) %>');
 $('#new_blog').fadeOut(250,
 	function () {
 		$(this).remove();
 	}
 )
+<% else %>
+errors.init('<%= escape_javascript(render 'shared/errors', object: @blog) %>')
+<% end %>

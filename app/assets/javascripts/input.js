@@ -1,9 +1,21 @@
 var input = {
 	parent: 'input[type=text]',
 	init: function () {
-		$(input.parent).off('click').on('click', function () { input.focus($(this)) } );
-		$(input.parent).off('blur').on('blur', function () { input.blur($(this)) } );
-		$(input.parent).prev('label').off('click').on('click', function () { input.hide($(this), true) } );
+		$(document).on(_.e('input:parent'), 'click', 
+			function () {
+				input.focus($(this));
+			}
+		)
+		$(document).on(_.e('input:parent'), 'blur', 
+			function () {
+				input.blur($(this));
+			}
+		)
+		_.$('input:parent').prev('label').off('click').on('click',
+			function () {
+				input.hide($(this));
+			}
+		)
 	},
 	show: function(l) {
 		var i = l.next('input');

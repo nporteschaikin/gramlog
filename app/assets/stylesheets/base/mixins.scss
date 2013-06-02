@@ -4,6 +4,12 @@
 	box-sizing: $bs;
 }
 
+@mixing border-radius($br) {
+	-webkit-border-radius: $br;
+	-moz-border-radius: $br;
+	border-radius: $br;
+}
+
 @mixin box-shadow ($a, $b: "") {
 	@if $b != "" {
 		-webkit-box-shadow: $a, $b;

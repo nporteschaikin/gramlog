@@ -2,16 +2,16 @@ var mine = {
 	parent: '.mine .container',
 	link: '.mine .open',
 	init: function () {
-		$(mine.link).off().on('click', mine.toggle);
+		$(document).on(_.e('mine:link'), 'click', mine.toggle);
 	},
 	toggle: function () {
-		$(mine.parent).is(':visible') ? mine.close() : mine.open();
+		_.$('mine:parent').is(':visible') ? mine.close() : mine.open();
 	},
 	open: function () {
-		$(mine.parent).slideDown(250);
+		_.$('mine:parent').slideDown(250);
 	},
 	close: function () {
-		$(mine.parent).slideUp(250);
+		_.$('mine:parent').slideUp(250);
 	}
 }
 

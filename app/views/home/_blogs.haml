@@ -1,0 +1,18 @@
+%section.mine
+	- if current_user.blogs.empty?
+		%nav.fixed.left.hover
+			%ul
+				%li.blue
+					= link_to new_blog_path, remote: true do
+						%span Create blog
+						%span.icon.plus.right
+	- else
+		%section.container
+			= render 'shared/blogs', blogs: current_user.blogs
+		%nav.absolute.right.open.hover
+			%ul
+				%li.green
+					%span My blogs
+				%li.turquoise
+					= link_to new_blog_path, remote: true do
+						%span.icon.plus

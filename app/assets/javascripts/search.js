@@ -1,22 +1,26 @@
 var search = {
-	elements: {
-		nav: '.search ul ul li',
-		parent: '.search .carousel',
-		form: '.search form'
-	},
+	
 	init: function () {
-		for (x in search.elements) search.elements[x] = $(search.elements[x]);
-		search.elements.nav.off('click').on('click', function () { search.go($(this).index()) } )
-		search.elements.form.off('submit.search').on('submit.search', function() {
-			photos.loading(true);
-		});
+		
+		$(document).on('click', _.e('search:nav'),
+			function () {
+				search.go($(this).index());
+			}
+		)
+		
+		$(document).on('submit.search', _.e('search:form'),
+			function () {
+				photos.loading(true);
+			}
+		)
 	},
+	
 	go: function (eq) {
-		var height = search.elements.form.first().outerHeight(true);
-		if (search.elements.form.eq(eq).length) {
-			search.elements.nav.filter('.open').removeClass('open');
-			search.elements.nav.eq(eq).addClass('open');
-			search.elements.parent.animate({top: -(eq * height)}, {queue: false, duration: 250});
+		var height = _.$('search:parent/search:form').first().outerHeight(true);
+		if ( _.$('search:parent/search:form').eq(eq).length ) {
+			_.$('search:parent/search:nav').filter(_.e('search:open')).removeClass(_.c('search:open'));
+			_.$('search:parent/search:nav').eq(eq).addClass(_.c('search:open'));
+			_.$('search:parent').animate({top: -(eq * height)}, {queue: false, duration: 250});
 			return true;
 		}
 		return false;

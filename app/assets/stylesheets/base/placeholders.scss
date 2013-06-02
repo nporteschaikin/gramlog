@@ -35,3 +35,11 @@
 	&:before { content: ''; display: block; }
 	&:after { content: ''; display: table; clear: both; }
 }
+
+%threeD {
+	border: {
+		bottom: {
+			width: 3px;
+		}
+	}
+}

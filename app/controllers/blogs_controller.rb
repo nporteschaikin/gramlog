@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
 	end
 	
 	def create
-		@blog = Blog.create(blog_params)
+		@blog = current_user.blogs.create(blog_params)
 		respond_to do |f|
 			f.js { render layout: false }
 		end
